@@ -1,6 +1,8 @@
 import { assertAlmostEquals, assertEquals } from '@std/assert'
 import Q from './Q.ts'
 import ln from './ln.ts'
+import zipIters from "./zipIters.ts";
+// import zipIters from "./zipIters.ts";
 
 Deno.test('ln::ln(1)', () => {
   let actual: number
@@ -86,4 +88,15 @@ Deno.test('ln::ln(2⁶¹⁷⁴)', () => {
 
   // The number of significant digits is log₁₀(6174) fewer than that in log(2).
   assertAlmostEquals(actual!, expected, 0.001)
+})
+
+Deno.test('ln::log₁₀(10⁹) base converted', () => {
+  let actual: number
+  const expected = 9
+
+  for (const [ln1b, ln10] of zipIters(ln(Q.of(10n ** 9n)), ln(Q.of(10n)))) {
+    actual = ln1b.toDouble() / ln10.toDouble()
+  }
+
+  assertAlmostEquals(actual!, expected, 0.0000001)
 })
