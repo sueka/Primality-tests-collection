@@ -9,7 +9,7 @@ import modPow from './modPow.ts'
  *
  * @param n an odd number ≥ 3
  */
-export default function aMillerRabinTest(n: bigint, k = 20): Primality {
+export default function performMillerRabinTest(n: bigint, k = 20): Primality {
   assert(n > 1n)
   assert((n & 1n) === 1n)
   assert(Number.isSafeInteger(k))
