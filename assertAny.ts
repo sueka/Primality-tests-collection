@@ -1,4 +1,4 @@
-import { AssertionError } from "@std/assert";
+import { AssertionError } from '@std/assert'
 
 /**
  * Asserts some of assertions will succeed.

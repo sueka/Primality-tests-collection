@@ -1,8 +1,7 @@
 import { assertAlmostEquals, assertEquals } from '@std/assert'
 import Q from './Q.ts'
 import ln from './ln.ts'
-import zipIters from "./zipIters.ts";
-// import zipIters from "./zipIters.ts";
+import zipIters from './zipIters.ts'
 
 Deno.test('ln::ln(1)', () => {
   let actual: number

@@ -1,6 +1,6 @@
 import { assertObjectMatch } from '@std/assert'
 import extGcd from './extGcd.ts'
-import assertAny from "./assertAny.ts";
+import assertAny from './assertAny.ts'
 
 Deno.test('extGcd::basic', () => {
   const actual = extGcd(2n, 7n)

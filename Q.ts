@@ -46,7 +46,7 @@ export default class Q {
   }
 
   // ne(this: Q, that: Q): boolean {
-  //   return ! this.eq(that)
+  //   return !this.eq(that)
   // }
 
   lt(this: Q, that: Q): boolean {
@@ -54,7 +54,7 @@ export default class Q {
   }
 
   lte(this: Q, that: Q): boolean {
-    return ! that.lt(this)
+    return !that.lt(this)
   }
 
   gt(this: Q, that: Q): boolean {
@@ -62,14 +62,14 @@ export default class Q {
   }
 
   // gte(this: Q, that: Q): boolean {
-  //   return ! this.lt(that)
+  //   return !this.lt(that)
   // }
 
   toDouble(): number {
     const n = Number(this.#n)
     const d = Number(this.#d)
 
-    if (! (Number.isFinite(n) && Number.isFinite(d) && Number.isFinite(n / d))) {
+    if (!(Number.isFinite(n) && Number.isFinite(d) && Number.isFinite(n / d))) {
       throw new Error('Numerator or denominator too large.')
     }
 
@@ -89,7 +89,8 @@ export default class Q {
 
   static from(n: bigint): Q {
     switch (typeof n) {
-      case 'bigint': return Q.fromZ(n)
+      case 'bigint':
+        return Q.fromZ(n)
     }
   }
 

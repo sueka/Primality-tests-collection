@@ -10,12 +10,12 @@ export default function* ln(x: Q, k = 20): Generator<Q> {
   let l = 0n
   let m = x
 
-  while (! m.lte(Q.of(4n, 3n))) {
+  while (!m.lte(Q.of(4n, 3n))) {
     m = m.div(Q.Two)
     ++l
   }
 
-  while (! Q.of(2n, 3n).lt(m)) {
+  while (!Q.of(2n, 3n).lt(m)) {
     m = m.mul(Q.Two)
     --l
   }
